@@ -1,45 +1,69 @@
-🏦 Queue Line Management System
+# 🏦 Queue Line Management System
 
-A robust and efficient C++ implementation of a waiting line management system. This project simulates a real-world ticketing workflow (e.g., bank, customer service) using Object-Oriented Programming (OOP) and standard data structures.
+A robust and efficient **C++** implementation of a waiting line management system.  
+This project simulates a real-world ticketing workflow (e.g., bank, customer service) using **Object-Oriented Programming (OOP)** and standard data structures.
 
-🚀 Overview
+---
 
-The Queue Line Management System provides a complete solution for managing client flow. It handles ticket generation with timestamps, estimates waiting times dynamically, and manages the serving process using the FIFO (First-In-First-Out) principle. It also features a visual representation of the queue in both directions.
+# 🚀 Overview
 
-✨ Key Features
+The **Queue Line Management System** provides a complete solution for managing client flow.
 
-Smart Ticket Issuance: Generates unique, sequential tickets (e.g., A01, A02) with real-time timestamps.
+It:
 
-Dynamic Wait Time: Automatically calculates the expected serving time for new clients based on the current queue size and average service time.
+- Generates tickets with real-time timestamps  
+- Dynamically estimates waiting time  
+- Manages the serving process using the **FIFO (First-In-First-Out)** principle  
+- Provides visual representations of the queue in both directions  
 
-Service Flow Control: Serves clients sequentially and updates queue statistics instantly.
+---
 
-Visual Reporting:
+# ✨ Key Features
 
-LTR Printing: Visualizes the queue from left to right (entry order).
+## 🎟 Smart Ticket Issuance
+Generates unique, sequential tickets (e.g., `A01`, `A02`) with real-time timestamps.
 
-RTL Printing: Visualizes the queue from right to left using a stack data structure.
+## ⏱ Dynamic Wait Time
+Automatically calculates the expected serving time for new clients based on:
+- Current queue size  
+- Average service time  
 
-Detailed Analytics: Provides a dashboard view of total tickets, served clients, and currently waiting clients.
+## 🔄 Service Flow Control
+- Serves clients sequentially  
+- Instantly updates queue statistics  
 
-🛠️ Technical Concepts
+## 📊 Visual Reporting
+- **LTR Printing:** Displays queue from left to right (entry order)  
+- **RTL Printing:** Displays queue from right to left using a `std::stack`  
 
-This project demonstrates a solid understanding of C++ and data structures:
+## 📈 Detailed Analytics
+Provides a dashboard showing:
+- Total tickets  
+- Served clients  
+- Waiting clients  
 
-std::queue: Used as the core container for managing the line (FIFO).
+---
 
-std::stack: Used to reverse the queue order for RTL visualization.
+# 🛠 Technical Concepts
 
-struct & class: Encapsulation of ticket data and queue logic.
+This project demonstrates strong understanding of:
 
-ctime: Integration with system time for accurate ticket stamping.
+- `std::queue` → Core FIFO container  
+- `std::stack` → Reverse visualization  
+- `struct` & `class` → Data encapsulation  
+- `<ctime>` → System time integration  
 
-💻 Installation & Usage
-1. Integration
+---
 
-Simply include the clsQueueLine header file in your C++ project.
+# 💻 Installation & Usage
 
-2. Example Code
+## 1️⃣ Integration
+
+Include the header file in your C++ project:
+
+```cpp
+#include "clsQueueLine.h"
+2️⃣ Example Usage
 #include <iostream>
 #include "clsQueueLine.h"
 
@@ -50,68 +74,70 @@ int main()
     // Initialize Queue: Prefix "A0", Service Time: 10 mins per client
     clsQueueLine PayQueue("A0", 10);
 
-    // 1. Issue Tickets
+    // Issue Tickets
     PayQueue.IssueTicket();
     PayQueue.IssueTicket();
     PayQueue.IssueTicket();
     PayQueue.IssueTicket();
 
-    // 2. Display Queue Info
+    // Display Queue Info
     cout << "\n--- Queue Status ---\n";
     PayQueue.PrintInfo();
 
-    // 3. Visualize Queue (Left to Right)
+    // Visualizations
     PayQueue.PrintTicketLineLTR();
-
-    // 4. Visualize Queue (Right to Left)
     PayQueue.PrintTicketLineRTL();
 
-    // 5. Print All Detailed Tickets
+    // Detailed Tickets
     PayQueue.PrintAllTickets();
 
-    // 6. Serve a Client
+    // Serve Client
     cout << "\nServing next client...\n";
     PayQueue.ServeNextClient();
 
-    // 7. Check Info after serving
     cout << "\n--- After Serving ---\n";
     PayQueue.PrintInfo();
 
     return 0;
 }
-
 📊 Sample Output
+_________________________________
+            Queue Info
+_________________________________
+Prefix          = A0
+Total Tickets   = 4
+Served Clients  = 0
+Waiting Clients = 4
+_________________________________
 
-Below is an example of what the console output looks like:
-
- _________________________________
-             Queue Info
- _________________________________
-   Prefix          = A0
-   Total Tickets   = 4
-   Served Clients  = 0
-   Waiting Clients = 4
- _________________________________
-
-
-Tickets: A01--> A02--> A03--> A04--> 
+Tickets:
+A01 --> A02 --> A03 --> A04 -->
 
 Serving next client...
 
- _________________________________
-             Queue Info
- _________________________________
-   Prefix          = A0
-   Total Tickets   = 4
-   Served Clients  = 1
-   Waiting Clients = 3
- _________________________________
-
+_________________________________
+            Queue Info
+_________________________________
+Prefix          = A0
+Total Tickets   = 4
+Served Clients  = 1
+Waiting Clients = 3
+_________________________________
 🔧 API Documentation
 Method	Description
-IssueTicket()	Creates a new ticket, stamps the time, calculates wait time, and pushes it to the queue.
-ServeNextClient()	Removes the client at the front of the queue and updates the served counter. Returns false if the queue is empty.
-PrintInfo()	Displays a summary dashboard (Total, Served, Waiting).
-PrintAllTickets()	Iterates through the queue and prints full details for every ticket in a card format.
-PrintTicketLineLTR()	Prints the queue flow from left to right.
-PrintTicketLineRTL()	Prints the queue flow from right to left (using a temporary stack).
+IssueTicket()	Creates a new ticket, stamps time, calculates wait time, and pushes it to the queue.
+ServeNextClient()	Removes the front client and updates counters. Returns false if empty.
+PrintInfo()	Displays summary statistics.
+PrintAllTickets()	Prints full details for every ticket.
+PrintTicketLineLTR()	Displays queue left → right.
+PrintTicketLineRTL()	Displays queue right → left using a temporary stack.
+🧠 Design Pattern
+This system follows a clear FIFO queue model, simulating real-world service counters such as:
+
+Banks
+
+Customer support centers
+
+Government offices
+
+Ticketing systems
