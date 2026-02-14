@@ -131,12 +131,21 @@ Government offices
 Ticketing systems
 ```
 
+---
 
 # API Documentation
 Method	Description
-IssueTicket()	Creates a new ticket, stamps time, calculates wait time, and pushes it to the queue.
-ServeNextClient()	Removes the front client and updates counters. Returns false if empty.
-PrintInfo()	Displays summary statistics.
-PrintAllTickets()	Prints full details for every ticket.
-PrintTicketLineLTR()	Displays queue left → right.
-PrintTicketLineRTL()	Displays queue right → left using a temporary stack.
+
+-IssueTicket()	Creates a new ticket, stamps time, calculates wait time, and pushes it to the queue.
+
+-ServeNextClient()	Removes the front client and updates counters. Returns false if empty.
+
+-PrintInfo()	Displays summary statistics.
+
+-PrintAllTickets()	Prints full details for every ticket.
+
+-PrintTicketLineLTR()	Displays queue left → right.
+
+-PrintTicketLineRTL()	Displays queue right → left using a temporary stack.
+
+---
