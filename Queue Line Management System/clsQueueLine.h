@@ -172,12 +172,12 @@ public:
 		{
 			Ticket Ticket = _TempQueue.front();
 
-			cout << "\t\t\t _________________________________\n";
-			cout << "\t\t\t  " << Ticket.PrefixTicket << "                            \n"; 
+			cout << "\n\t\t\t _________________________________\n";
+			cout << "\n\t\t\t\t\t  " << Ticket.PrefixTicket << "                  \n\n"; 
 			cout << "\t\t\t " << Ticket.Date << "       \n";
 			cout << "\t\t\t Waiting Clients : " << Ticket.WatingClients << "           \n";
 			cout << "\t\t\t Serve Time In   : " << Ticket.ServedTime << " Minutes  \n";
-			cout << "\t\t\t_______________________________\n\n";
+			cout << "\n\t\t\t__________________________________\n\n";
 
 			_TempQueue.pop();
 		}
