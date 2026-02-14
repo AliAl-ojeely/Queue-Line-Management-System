@@ -1,11 +1,11 @@
-# 🏦 Queue Line Management System
+# Queue Line Management System
 
 A robust and efficient **C++** implementation of a waiting line management system.  
 This project simulates a real-world ticketing workflow (e.g., bank, customer service) using **Object-Oriented Programming (OOP)** and standard data structures.
 
 ---
 
-# 🚀 Overview
+# Overview
 
 The **Queue Line Management System** provides a complete solution for managing client flow.
 
@@ -18,25 +18,25 @@ It:
 
 ---
 
-# ✨ Key Features
+# Key Features
 
-## 🎟 Smart Ticket Issuance
+## Smart Ticket Issuance
 Generates unique, sequential tickets (e.g., `A01`, `A02`) with real-time timestamps.
 
-## ⏱ Dynamic Wait Time
+## Dynamic Wait Time
 Automatically calculates the expected serving time for new clients based on:
 - Current queue size  
 - Average service time  
 
-## 🔄 Service Flow Control
+## Service Flow Control
 - Serves clients sequentially  
 - Instantly updates queue statistics  
 
-## 📊 Visual Reporting
+## Visual Reporting
 - **LTR Printing:** Displays queue from left to right (entry order)  
 - **RTL Printing:** Displays queue from right to left using a `std::stack`  
 
-## 📈 Detailed Analytics
+## Detailed Analytics
 Provides a dashboard showing:
 - Total tickets  
 - Served clients  
@@ -44,7 +44,7 @@ Provides a dashboard showing:
 
 ---
 
-# 🛠 Technical Concepts
+# Technical Concepts
 
 This project demonstrates strong understanding of:
 
@@ -55,15 +55,15 @@ This project demonstrates strong understanding of:
 
 ---
 
-# 💻 Installation & Usage
+# Installation & Usage
 
-## 1️⃣ Integration
+## Integration
 
 Include the header file in your C++ project:
 
 ```cpp
 #include "clsQueueLine.h"
-2️⃣ Example Usage
+Example Usage
 #include <iostream>
 #include "clsQueueLine.h"
 
@@ -100,7 +100,7 @@ int main()
 
     return 0;
 }
-📊 Sample Output
+Sample Output
 _________________________________
             Queue Info
 _________________________________
@@ -123,7 +123,16 @@ Total Tickets   = 4
 Served Clients  = 1
 Waiting Clients = 3
 _________________________________
-🔧 API Documentation
+
+Customer support centers
+
+Government offices
+
+Ticketing systems
+```
+
+
+# API Documentation
 Method	Description
 IssueTicket()	Creates a new ticket, stamps time, calculates wait time, and pushes it to the queue.
 ServeNextClient()	Removes the front client and updates counters. Returns false if empty.
@@ -131,13 +140,3 @@ PrintInfo()	Displays summary statistics.
 PrintAllTickets()	Prints full details for every ticket.
 PrintTicketLineLTR()	Displays queue left → right.
 PrintTicketLineRTL()	Displays queue right → left using a temporary stack.
-🧠 Design Pattern
-This system follows a clear FIFO queue model, simulating real-world service counters such as:
-
-Banks
-
-Customer support centers
-
-Government offices
-
-Ticketing systems
