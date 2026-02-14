@@ -16,8 +16,8 @@ int main()
 
 	PayBillLine.PrintInfo();
 
-	PayBillLine.PrintTicketLineLTR();
-	PayBillLine.PrintTicketLineRTL();
+	PayBillLine.PrintTicketsLineLTR();
+	PayBillLine.PrintTicketsLineRTL();
 
 	PayBillLine.PrintAllTickets();
 
@@ -30,8 +30,8 @@ int main()
 	SubscriptionQueue.IssueTicket();
 
 	SubscriptionQueue.PrintInfo();
-	SubscriptionQueue.PrintTicketLineLTR();
-	SubscriptionQueue.PrintTicketLineRTL();
+	SubscriptionQueue.PrintTicketsLineLTR();
+	SubscriptionQueue.PrintTicketsLineRTL();
 
 	SubscriptionQueue.PrintAllTickets();
 
